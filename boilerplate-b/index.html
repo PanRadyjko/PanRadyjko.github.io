@@ -1,14 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Imie Nazwisko (00000) - PTW LAB B</title>
-
+    <title>Piotr Mikulski (57756) - PTW LAB B</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
+<div class="military-container">
+    <header>
+        <h1>CENTRUM OPERACYJNE: TO-DO</h1>
+        <input type="text" id="search-input" placeholder="SZUKAJ ROZKAZU (min. 2 znaki)...">
+    </header>
 
+    <main id="todo-list-container">
+    </main>
+
+    <footer>
+        <div class="add-task-panel">
+            <input type="text" id="new-task-text" placeholder="Treść rozkazu...">
+            <input type="datetime-local" id="new-task-date">
+            <button id="add-task-btn">DODAJ ZADANIE</button>
+        </div>
+        <div id="validation-errors"></div>
+    </footer>
+</div>
 </body>
 </html>
