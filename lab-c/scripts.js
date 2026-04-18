@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const map = L.map('map', { preferCanvas: true }).setView([51.505, -0.09], 13);
+
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap',
     crossOrigin: true
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       offscreen.width = 400;
       offscreen.height = 400;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
       ctx.clearRect(0, 0, 400, 400);
       ctx.drawImage(canvas, sx, sy, size, size, 0, 0, 400, 400);
 
@@ -111,9 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (correct) {
+      console.log("%c MISSION ACCOMPLISHED ", "background: #4a5d23; color: #fff; font-size: 20px; font-weight: bold; padding: 10px;");
+
       if (Notification.permission === "granted") {
-        new Notification("MISJA WYKONANA", { body: "Mapa ułożona poprawnie!" });
+        new Notification("MISJA WYKONANA", { body: "Mapa taktyczna ułożona poprawnie!" });
       }
+
       alert("GRATULACJE! MAPA ZOSTAŁA ZWERYFIKOWANA.");
       document.getElementById('raster-section').style.display = 'none';
       document.getElementById('puzzle-board').innerHTML = '';
