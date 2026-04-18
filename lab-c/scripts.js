@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const map = L.map('map', { preferCanvas: true }).setView([51.505, -0.09], 13);
-
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap',
     crossOrigin: true
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
       map.setView([latitude, longitude], 15);
-      L.marker([latitude, longitude]).addTo(map).bindPopup("POZYCJA WŁASNA").openPopup();
+      L.marker([latitude, longitude]).addTo(map).bindPopup("TWOJA POZYCJA").openPopup();
     }, null, { enableHighAccuracy: true });
   });
 
@@ -27,10 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       offscreen.width = 400;
       offscreen.height = 400;
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = 'high';
       ctx.clearRect(0, 0, 400, 400);
       ctx.drawImage(canvas, sx, sy, size, size, 0, 0, 400, 400);
+
+      const previewContainer = document.getElementById('canvas-preview-container');
+      previewContainer.innerHTML = '';
+      const previewCanvas = document.createElement('canvas');
+      previewCanvas.width = 400;
+      previewCanvas.height = 400;
+      previewCanvas.getContext('2d').drawImage(offscreen, 0, 0);
+      previewContainer.appendChild(previewCanvas);
+      document.getElementById('raster-section').style.display = 'block';
+
       createPuzzles(offscreen);
     });
   });
@@ -79,13 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const existingPiece = this.firstChild;
       sourceParent.appendChild(existingPiece);
       this.appendChild(draggedPiece);
-      if (sourceParent.id === 'puzzle-pieces') {
-        existingPiece.style.width = "90px";
-        existingPiece.style.height = "90px";
-      } else {
-        existingPiece.style.width = "100px";
-        existingPiece.style.height = "100px";
-      }
+      existingPiece.style.width = sourceParent.id === 'puzzle-pieces' ? "90px" : "100px";
+      existingPiece.style.height = sourceParent.id === 'puzzle-pieces' ? "90px" : "100px";
     }
     draggedPiece.style.width = "100px";
     draggedPiece.style.height = "100px";
@@ -110,9 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (correct) {
       if (Notification.permission === "granted") {
-        new Notification("MISJA WYKONANA", { body: "Mapa taktyczna ułożona poprawnie!" });
+        new Notification("MISJA WYKONANA", { body: "Mapa ułożona poprawnie!" });
       }
-      alert("GRATULACJE REKRUCIE! MAPA ZOSTAŁA ZWERYFIKOWANA.");
+      alert("GRATULACJE! MAPA ZOSTAŁA ZWERYFIKOWANA.");
+      document.getElementById('raster-section').style.display = 'none';
       document.getElementById('puzzle-board').innerHTML = '';
       document.getElementById('puzzle-pieces').innerHTML = '';
     }

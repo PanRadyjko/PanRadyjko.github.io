@@ -14,20 +14,29 @@
 <header>
     <h1>CENTRUM OPERACYJNE: REKONESANS</h1>
 </header>
-<div class="grid-container">
-    <section class="map-sector">
+<main>
+    <section class="section-box">
         <div id="map"></div>
         <div class="command-panel">
             <button id="get-location">MOJA LOKALIZACJA (GPS)</button>
             <button id="download-map">POBIERZ MAPĘ TAKTYCZNĄ</button>
         </div>
     </section>
-    <section class="puzzle-sector">
-        <div id="puzzle-board"></div>
-        <div id="puzzle-pieces"></div>
+
+    <section class="section-box" id="raster-section" style="display:none;">
+        <h3>CEL </h3>
+        <div id="canvas-preview-container"></div>
     </section>
-</div>
-<canvas id="offscreen-canvas" width="600" height="600" style="display:none;"></canvas>
+
+    <section class="section-box">
+        <h3>OBSZAR OPERACYJNY</h3>
+        <div id="puzzle-container">
+            <div id="puzzle-board"></div>
+            <div id="puzzle-pieces"></div>
+        </div>
+    </section>
+</main>
+<canvas id="offscreen-canvas" width="400" height="400" style="display:none;"></canvas>
 <footer>
     <p>2026 Piotr Mikulski</p>
 </footer>

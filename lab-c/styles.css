@@ -4,25 +4,23 @@ body {
   font-family: 'Courier New', monospace;
   margin: 0;
   padding: 10px;
-  overflow-x: hidden;
 }
 header h1 {
   text-align: center;
   border-bottom: 2px solid #4a5d23;
-  padding-bottom: 5px;
-  margin: 0 0 15px 0;
+  padding-bottom: 10px;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 450px;
-  gap: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
+.section-box {
+  max-width: 850px;
+  margin: 0 auto 20px auto;
+  background: #1e1f21;
+  padding: 15px;
+  border: 1px solid #444;
 }
 #map {
-  height: 600px;
+  height: 450px;
   width: 100%;
-  border: 3px solid #4a5d23;
+  border: 2px solid #4a5d23;
 }
 .command-panel {
   display: flex;
@@ -39,6 +37,21 @@ button {
   flex: 1;
 }
 button:hover { background-color: #5d752d; }
+#canvas-preview-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+#canvas-preview-container canvas {
+  border: 3px solid #fff;
+  max-width: 100%;
+}
+#puzzle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 #puzzle-board {
   width: 400px;
   height: 400px;
@@ -46,7 +59,6 @@ button:hover { background-color: #5d752d; }
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(4, 100px);
   border: 4px solid #4a5d23;
-  background-color: #1e1f21;
 }
 .puzzle-slot {
   width: 100px;
@@ -55,27 +67,24 @@ button:hover { background-color: #5d752d; }
   box-sizing: border-box;
 }
 #puzzle-pieces {
-  width: 400px;
-  min-height: 200px;
+  width: 100%;
+  min-height: 120px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px;
-  margin-top: 15px;
+  gap: 10px;
+  justify-content: center;
   border: 2px dashed #666;
-  background-color: #1e1f21;
+  padding: 15px;
 }
 .piece {
   width: 90px;
   height: 90px;
   cursor: grab;
   image-rendering: crisp-edges;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-  border: 1px solid #444;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 footer {
   text-align: center;
   font-size: 0.8em;
-  margin-top: 20px;
-  border-top: 1px solid #444;
+  margin-top: 30px;
 }
