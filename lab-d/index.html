@@ -1,14 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Piotr Mikulski (57756) - PTW LAB C</title>
-
+    <title>Piotr Mikulski (57756) - PTW LAB D - Weather</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
+<header>
+    <h1>WYWIAD METEOROLOGICZNY: SEKTOR FALEZ</h1>
+</header>
+<main>
+    <section class="section-box">
+        <div class="command-panel">
+            <input type="text" id="city-input" placeholder="WPROWADŹ LOKALIZACJĘ (np. Szczecin, PL)...">
+            <button id="get-weather">POBIERZ DANE</button>
+        </div>
 
+        <div id="current-weather" class="weather-box">
+        </div>
+
+        <div id="forecast-weather" class="forecast-container">
+        </div>
+    </section>
+</main>
+<footer>
+    <p>REKONESANS POGODOWY | 2026 Piotr Mikulski</p>
+</footer>
 </body>
 </html>
