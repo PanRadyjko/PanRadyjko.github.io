@@ -1,5 +1,5 @@
 body {
-  background-image: url('Falez.png');
+  background-image: url('assets/Falez.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -38,6 +38,8 @@ input[type="text"] {
   border: 1px solid #4a5d23;
   color: #fff;
   font-family: inherit;
+  box-sizing: border-box;
+  max-width: 0;
 }
 
 button {
@@ -87,4 +89,32 @@ footer {
   margin-top: 40px;
   padding: 10px;
   background-color: rgba(30, 31, 33, 0.9);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  .command-panel {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-box {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .forecast-item {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  input[type="text"], button {
+    width: 100%;
+    flex: none;
+  }
 }
