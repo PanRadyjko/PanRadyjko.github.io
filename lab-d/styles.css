@@ -6,7 +6,7 @@ body {
   color: #d4d4d4;
   font-family: 'Courier New', monospace;
   margin: 0;
-  padding: 20px;
+  padding: 15px;
 }
 
 header h1 {
@@ -14,21 +14,22 @@ header h1 {
   background-color: rgba(30, 31, 33, 0.9);
   padding: 20px;
   border: 2px solid #4a5d23;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .section-box {
   max-width: 900px;
   margin: 0 auto;
   background-color: rgba(30, 31, 33, 0.85);
-  padding: 25px;
+  padding: 15px;
   border: 1px solid #444;
+  box-sizing: border-box;
 }
 
 .command-panel {
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 input[type="text"] {
@@ -39,7 +40,7 @@ input[type="text"] {
   color: #fff;
   font-family: inherit;
   box-sizing: border-box;
-  max-width: 0;
+  width: 100%;
 }
 
 button {
@@ -86,35 +87,30 @@ button:hover {
 
 footer {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 10px;
   background-color: rgba(30, 31, 33, 0.9);
 }
 
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.2em;
-    padding: 10px;
-  }
-
   .command-panel {
     flex-direction: column;
     gap: 10px;
   }
 
-  .section-box {
+  input[type="text"], button {
+    width: 100%;
+    flex: none;
+  }
+
+  header h1 {
+    font-size: 1.2em;
     padding: 10px;
-    margin: 5px;
   }
 
   .forecast-item {
     flex-direction: column;
-    gap: 5px;
     text-align: center;
-  }
-
-  input[type="text"], button {
-    width: 100%;
-    flex: none;
+    gap: 5px;
   }
 }
