@@ -1,0 +1,80 @@
+body {
+    background-color: #001a00;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+}
+
+header {
+    height: 200px;
+    background: #003300;
+    border-bottom: 3px solid #00ff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 50px #000;
+}
+
+header h1 {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.style1-images, .style2-images {
+    display: none;
+}
+
+.content-block {
+    background: rgba(0, 40, 0, 0.8);
+    border: 1px solid #00ff00;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    line-height: 1.8;
+}
+
+.content-block p::before {
+    content: "> ";
+}
+
+footer {
+    background: #000;
+    border: 1px solid #00ff00;
+    padding: 20px;
+    color: #008800;
+
+    max-width: 1000px;
+    margin: 20px auto;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.style-switcher button {
+    background: #002200;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px 20px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.style-switcher button:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 15px #00ff00;
+}
