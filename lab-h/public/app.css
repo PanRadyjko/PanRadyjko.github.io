@@ -1,0 +1,24 @@
+body {
+    background-color: #f4ecd8 !important;
+    color: #4a3b32;
+}
+
+.bg-success {
+    background-color: #8b7355 !important;
+}
+
+.custom-footer {
+    background-color: #d2c0a5;
+    color: #4a3b32;
+    border-top: 3px solid #6b533a;
+}
+
+.table {
+    --bs-table-bg: #fdf5e6;
+    --bs-table-color: #4a3b32;
+    --bs-table-striped-bg: #f4ecd8;
+}
+
+table.table td:nth-child(2) {
+    font-weight: bold;
+}

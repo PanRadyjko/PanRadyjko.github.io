@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tank{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+    <h1>Tank</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tank.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ tank.name }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ tank.type }}</td>
+            </tr>
+            <tr>
+                <th>Caliber</th>
+                <td>{{ tank.caliber }}</td>
+            </tr>
+            <tr>
+                <th>Faction</th>
+                <td>{{ tank.faction }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tank_index') }}">back to list</a>
+
+    <a href="{{ path('app_tank_edit', {'id': tank.id}) }}">edit</a>
+
+    {{ include('tank/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

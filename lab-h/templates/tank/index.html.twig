@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tank index{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>Tank index</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Caliber</th>
+                <th>Faction</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tank in tanks %}
+            <tr>
+                <td>{{ tank.id }}</td>
+                <td>{{ tank.name }}</td>
+                <td>{{ tank.type }}</td>
+                <td>{{ tank.caliber }}</td>
+                <td>{{ tank.faction }}</td>
+                <td>
+                    <a href="{{ path('app_tank_show', {'id': tank.id}) }}">show</a>
+                    <a href="{{ path('app_tank_edit', {'id': tank.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tank_new') }}">Create new</a>
+</div>
+{% endblock %}
