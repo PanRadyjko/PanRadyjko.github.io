@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1><%= tank.name %></h1>
+<p><strong>Typ:</strong> <%= tank.type %></p>
+<p><strong>Kaliber:</strong> <%= tank.caliber %></p>
+<p><strong>Frakcja:</strong> <%= tank.faction %></p>
+<hr>
+<a href="/tanks">Powrót do listy</a> | <a href="/tanks/<%= tank.id %>/edit">Edytuj</a>
+</body>
+</html>

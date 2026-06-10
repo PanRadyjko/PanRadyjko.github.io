@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>TANKS DEPLOYED</h1>
+<a href="/tanks/create">Dodaj nowy</a>
+<ul>
+    <% tanks.forEach(function(model) { %>
+        <li>
+            <strong><%= model.name %></strong> (<%= model.type %>) - Frakcja: <%= model.faction %>            <a href="/tanks/<%= model.id %>">Szczegóły</a>
+        </li>
+    <% }); %>
+</ul>
+</body>
+</html>

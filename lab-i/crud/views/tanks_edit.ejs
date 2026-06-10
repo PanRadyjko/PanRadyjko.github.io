@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>Edycja: <%= tank.name %></h1>
+<form action="/tanks/<%= tank.id %>/edit" method="POST">
+    <p>
+        <label>Nazwa:</label><br>
+        <input type="text" name="name" value="<%= tank.name %>" required />
+    </p>
+    <p>
+        <label>Typ:</label><br>
+        <input type="text" name="type" value="<%= tank.type %>" required />
+    </p>
+    <p>
+        <label>Kaliber:</label><br>
+        <input type="text" name="caliber" value="<%= tank.caliber %>" required />
+    </p>
+    <p>
+        <label>Frakcja:</label><br>
+        <input type="text" name="faction" value="<%= tank.faction %>" required />
+    </p>
+    <button type="submit">Zapisz zmiany</button>
+</form>
+<br>
+<form action="/tanks/<%= tank.id %>/delete" method="POST" onsubmit="return confirm('Na pewno usunąć ten model?');">
+    <button type="submit" style="color: red;">Usuń czołg</button>
+</form>
+<br>
+<a href="/tanks">Powrót do listy</a>
+</body>
+</html>
