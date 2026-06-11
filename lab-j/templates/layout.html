@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Baza Pojazdów Gąsienicowych{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Rejestr Pojazdów Bojowych</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Lista Pojazdów</a> |
+            <a href="{{ url_for('create') }}">Dodaj Pojazd</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    <hr>
+    <footer>
+        <p>Piotr Mikulski (57756) &copy; 2026</p>
+    </footer>
+</body>
+</html>

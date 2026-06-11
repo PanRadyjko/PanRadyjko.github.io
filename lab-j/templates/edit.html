@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}Modyfikacja: {{ tank.name }}{% endblock %}
+
+{% block content %}
+    <h2>Edycja parametrów czołgu: {{ tank.name }}</h2>
+    <form method="POST">
+        <label>Nazwa czołgu: <input type="text" name="name" value="{{ tank.name }}" required></label><br><br>
+        <label>Typ pojazdu: <input type="text" name="type" value="{{ tank.type }}" required></label><br><br>
+        <label>Nacja / Frakcja: <input type="text" name="nation" value="{{ tank.nation }}" required></label><br><br>
+        <label>Kaliber działa: <input type="text" name="caliber" value="{{ tank.caliber }}" required></label><br><br>
+        <button type="submit">Zatwierdź zmiany</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Anuluj</a>
+{% endblock %}

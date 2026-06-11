@@ -1,0 +1,141 @@
+body {
+    background-color: #1e1f1a;
+    color: #d4c5a1;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    margin: 0;
+}
+
+header {
+    background: #2e3025;
+    border: 3px double #8c7d55;
+    padding: 20px;
+    text-align: center;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+h1 {
+    color: #d4c5a1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px #000;
+}
+
+nav a {
+    color: #a39468;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: #e6dcb8;
+    text-shadow: 0 0 5px #e6dcb8;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: #8c7d55;
+    margin: 20px 0;
+}
+
+main {
+    background: #2a2c21;
+    border: 2px solid #5c5339;
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.7);
+}
+
+h2 {
+    color: #bfae80;
+    border-bottom: 1px solid #5c5339;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #22241b;
+}
+
+table, th, td {
+    border: 1px solid #5c5339;
+}
+
+th {
+    background-color: #333628;
+    color: #d4c5a1;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #282a20;
+}
+
+tr:hover {
+    background-color: #383c2c;
+}
+
+a {
+    color: #bfae80;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e6dcb8;
+    text-decoration: underline;
+}
+
+input[type="text"], input[type="number"] {
+    background-color: #1a1b14;
+    border: 1px solid #5c5339;
+    color: #d4c5a1;
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 300px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    outline: 1px solid #8c7d55;
+}
+
+button, input[type="submit"] {
+    background-color: #3a3d2e;
+    border: 1px solid #5c5339;
+    color: #d4c5a1;
+    padding: 8px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #4a4e3b;
+    color: #e6dcb8;
+    border-color: #8c7d55;
+}
+
+form {
+    background: #1a1b14;
+    padding: 20px;
+    border: 1px dashed #5c5339;
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #6e664c;
+    margin-top: 20px;
+}

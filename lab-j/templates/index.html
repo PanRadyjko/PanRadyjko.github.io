@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Zarejestrowane pojazdy bojowe</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nazwa czołgu</th>
+                <th>Typ</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tank in tanks %}
+            <tr>
+                <td>{{ tank.name }}</td>
+                <td>{{ tank.type }}</td>
+                <td>
+                    <a href="{{ url_for('show', tank_id=tank.id) }}">Szczegóły</a> |
+                    <a href="{{ url_for('edit', tank_id=tank.id) }}">Edytuj</a> |
+                    <form action="{{ url_for('delete', tank_id=tank.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Usunąć pojazd?')">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

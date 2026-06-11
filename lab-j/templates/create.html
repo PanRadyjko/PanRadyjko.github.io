@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}Nowy Pojazd Bojowy{% endblock %}
+
+{% block content %}
+    <h2>Wprowadź nowy czołg do bazy danych</h2>
+    <form method="POST">
+        <label>Nazwa czołgu: <input type="text" name="name" required></label><br><br>
+        <label>Typ pojazdu: <input type="text" name="type" required></label><br><br>
+        <label>Nacja / Frakcja: <input type="text" name="nation" required></label><br><br>
+        <label>Kaliber działa: <input type="text" name="caliber" required></label><br><br>
+        <button type="submit">Dodaj do rejestru</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Anuluj</a>
+{% endblock %}

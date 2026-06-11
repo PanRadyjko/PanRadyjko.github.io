@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Specyfikacja - {{ tank.name }}{% endblock %}
+
+{% block content %}
+    <h2>Pełna specyfikacja techniczna pojazdu</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <td><strong>ID w bazie:</strong></td>
+            <td>{{ tank.id }}</td>
+        </tr>
+        <tr>
+            <td><strong>Nazwa modelu:</strong></td>
+            <td>{{ tank.name }}</td>
+        </tr>
+        <tr>
+            <td><strong>Typ pojazdu:</strong></td>
+            <td>{{ tank.type }}</td>
+        </tr>
+        <tr>
+            <td><strong>Nacja / Kraj pochodzenia:</strong></td>
+            <td>{{ tank.nation }}</td>
+        </tr>
+        <tr>
+            <td><strong>Kaliber głównego działa:</strong></td>
+            <td>{{ tank.caliber }}</td>
+        </tr>
+    </table>
+    <br>
+    <a href="{{ url_for('index') }}">Powrót do listy</a>
+{% endblock %}
