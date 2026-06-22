@@ -2,24 +2,20 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Baza Pojazdów Gąsienicowych{% endblock %}</title>
+    <title>Zbrojownia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <header>
-        <h1>Rejestr Pojazdów Bojowych</h1>
-        <nav>
-            <a href="{{ url_for('index') }}">Lista Pojazdów</a> |
-            <a href="{{ url_for('create') }}">Dodaj Pojazd</a>
-        </nav>
-    </header>
-    <hr>
+<body class="{% block body_class %}{% endblock %}">
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Lista</a></li>
+            <li><a href="{{ url_for('create') }}">Dodaj</a></li>
+        </ul>
+    </nav>
     <main>
-        {% block content %} {% endblock %}
+        {% block content %}{% endblock %}
     </main>
-    <hr>
-    <footer>
-        <p>Piotr Mikulski (57756) &copy; 2026</p>
-    </footer>
+    <footer>&copy; 2026 Piotr Mikulski (57756)</footer>
 </body>
 </html>

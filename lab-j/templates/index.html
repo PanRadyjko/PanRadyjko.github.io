@@ -1,29 +1,23 @@
 {% extends 'layout.html' %}
+{% block body_class %}index{% endblock %}
 
 {% block content %}
-    <h2>Zarejestrowane pojazdy bojowe</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nazwa czołgu</th>
-                <th>Typ</th>
-                <th>Akcje</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for tank in tanks %}
-            <tr>
-                <td>{{ tank.name }}</td>
-                <td>{{ tank.type }}</td>
-                <td>
-                    <a href="{{ url_for('show', tank_id=tank.id) }}">Szczegóły</a> |
-                    <a href="{{ url_for('edit', tank_id=tank.id) }}">Edytuj</a> |
-                    <form action="{{ url_for('delete', tank_id=tank.id) }}" method="POST" style="display:inline;">
-                        <button type="submit" onclick="return confirm('Usunąć pojazd?')">Usuń</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<h1>Zarejestrowane pojazdy bojowe</h1>
+<ul class="index-list">
+    {% for tank in tanks %}
+    <li>
+        <h3>{{ tank.name }}</h3>
+        <p>Typ: {{ tank.type }} | Nacja: {{ tank.nation }}</p>
+        <ul class="action-list">
+            <li><a href="{{ url_for('show', tank_id=tank.id) }}">Szczegóły</a></li>
+            <li><a href="{{ url_for('edit', tank_id=tank.id) }}">Edytuj</a></li>
+            <li>
+                <form action="{{ url_for('delete', tank_id=tank.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Usunąć pojazd?')">Usuń</button>
+                </form>
+            </li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
