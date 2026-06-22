@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('./partials/header.ejs', { bodyClass: 'show' }) %>
+
 <h1><%= tank.name %></h1>
-<p><strong>Typ:</strong> <%= tank.type %></p>
-<p><strong>Kaliber:</strong> <%= tank.caliber %></p>
-<p><strong>Frakcja:</strong> <%= tank.faction %></p>
-<hr>
-<a href="/tanks">Powrót do listy</a> | <a href="/tanks/<%= tank.id %>/edit">Edytuj</a>
-</body>
-</html>
+
+<article>
+    <p><strong>Typ:</strong> <%= tank.type %></p>
+    <p><strong>Kaliber:</strong> <%= tank.caliber %></p>
+    <p><strong>Frakcja:</strong> <%= tank.faction %></p>
+</article>
+
+<ul class="action-list">
+    <li><a href="/tanks">Back to list</a></li>
+    <li><a href="/tanks/<%= tank.id %>/edit">Edit</a></li>
+</ul>
+
+<%- include('./partials/footer.ejs') %>

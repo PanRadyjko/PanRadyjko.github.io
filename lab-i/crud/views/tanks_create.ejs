@@ -1,31 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('./partials/header.ejs', { bodyClass: 'edit' }) %>
+
 <h1>Dodaj nowy czołg</h1>
-<form action="/tanks/create" method="POST">
-    <p>
-        <label>Nazwa:</label><br>
+
+<form action="/tanks/create" method="POST" class="edit-form">
+    <div class="form-group">
+        <label>Nazwa:</label>
         <input type="text" name="name" required />
-    </p>
-    <p>
-        <label>Typ:</label><br>
+    </div>
+    <div class="form-group">
+        <label>Typ:</label>
         <input type="text" name="type" required />
-    </p>
-    <p>
-        <label>Kaliber:</label><br>
+    </div>
+    <div class="form-group">
+        <label>Kaliber:</label>
         <input type="text" name="caliber" required />
-    </p>
-    <p>
-        <label>Frakcja:</label><br>
+    </div>
+    <div class="form-group">
+        <label>Frakcja:</label>
         <input type="text" name="faction" required />
-    </p>
-    <button type="submit">Dodaj</button>
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input type="submit" value="Dodaj">
+    </div>
 </form>
-<br>
+
 <a href="/tanks">Powrót do listy</a>
-</body>
-</html>
+
+<%- include('./partials/footer.ejs') %>

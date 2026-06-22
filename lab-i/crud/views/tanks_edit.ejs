@@ -1,35 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-<h1>Edycja: <%= tank.name %></h1>
-<form action="/tanks/<%= tank.id %>/edit" method="POST">
-    <p>
-        <label>Nazwa:</label><br>
+<%- include('./partials/header.ejs', { bodyClass: 'edit' }) %>
+
+<h1>Edit Tank</h1>
+
+<form action="/tanks/<%= tank.id %>/edit" method="POST" class="edit-form">
+    <div class="form-group">
+        <label>Name</label>
         <input type="text" name="name" value="<%= tank.name %>" required />
-    </p>
-    <p>
-        <label>Typ:</label><br>
+    </div>
+    <div class="form-group">
+        <label>Type</label>
         <input type="text" name="type" value="<%= tank.type %>" required />
-    </p>
-    <p>
-        <label>Kaliber:</label><br>
+    </div>
+    <div class="form-group">
+        <label>Caliber</label>
         <input type="text" name="caliber" value="<%= tank.caliber %>" required />
-    </p>
-    <p>
-        <label>Frakcja:</label><br>
+    </div>
+    <div class="form-group">
+        <label>Faction</label>
         <input type="text" name="faction" value="<%= tank.faction %>" required />
-    </p>
-    <button type="submit">Zapisz zmiany</button>
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input type="submit" value="Update">
+    </div>
 </form>
-<br>
-<form action="/tanks/<%= tank.id %>/delete" method="POST" onsubmit="return confirm('Na pewno usunąć ten model?');">
-    <button type="submit" style="color: red;">Usuń czołg</button>
-</form>
-<br>
-<a href="/tanks">Powrót do listy</a>
-</body>
-</html>
+
+<ul class="action-list">
+    <li><a href="/tanks">back to list</a></li>
+    <li>
+        <form method="post" action="/tanks/<%= tank.id %>/delete" onsubmit="return confirm('Are you sure you want to delete this item?');">
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+</ul>
+
+<%- include('./partials/footer.ejs') %>

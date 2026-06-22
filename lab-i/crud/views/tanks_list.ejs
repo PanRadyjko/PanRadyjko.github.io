@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-<h1>TANKS DEPLOYED</h1>
-<a href="/tanks/create">Dodaj nowy</a>
-<ul>
+<%- include('./partials/header.ejs', { bodyClass: 'index' }) %>
+
+<h1>Tank index</h1>
+
+<a href="/tanks/create">Create new</a>
+
+<ul class="index-list">
     <% tanks.forEach(function(model) { %>
         <li>
-            <strong><%= model.name %></strong> (<%= model.type %>) - Frakcja: <%= model.faction %>            <a href="/tanks/<%= model.id %>">Szczegóły</a>
+            <h3><%= model.name %></h3>
+            <p>Typ: <%= model.type %> | Kaliber: <%= model.caliber %> | Frakcja: <%= model.faction %></p>
+            <ul class="action-list">
+                <li><a href="/tanks/<%= model.id %>">Details</a></li>
+                <li><a href="/tanks/<%= model.id %>/edit">Edit</a></li>
+            </ul>
         </li>
     <% }); %>
 </ul>
-</body>
-</html>
+
+<%- include('./partials/footer.ejs') %>
